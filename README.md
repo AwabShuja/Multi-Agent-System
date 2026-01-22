@@ -34,43 +34,6 @@ This project demonstrates advanced multi-agent orchestration where a **Superviso
 - Groq API key ([Get it here](https://console.groq.com/keys))
 - Tavily API key ([Get it here](https://app.tavily.com/))
 
-### Installation
-
-1. **Clone and navigate to the project**
-   ```bash
-   cd "Multi Agent Researcher"
-   ```
-
-2. **Create and activate virtual environment**
-   ```bash
-   python -m venv venv
-   .\venv\Scripts\Activate.ps1  # Windows PowerShell
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure environment variables**
-   ```bash
-   copy .env.example .env
-   # Edit .env and add your API keys
-   ```
-
-### Environment Setup
-
-Create a `.env` file with:
-
-```env
-GROQ_API_KEY=your_groq_api_key_here
-TAVILY_API_KEY=your_tavily_api_key_here
-MODEL_NAME=llama-3.3-70b-versatile
-TEMPERATURE=0.7
-MAX_TOKENS=4096
-LOG_LEVEL=INFO
-```
-
 ## 📁 Project Structure
 
 ```
