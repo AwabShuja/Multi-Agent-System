@@ -153,8 +153,8 @@ def route_after_critic(state: GraphState) -> Literal["supervisor", "error"]:
     
     # Log critique decision
     critique = state.get("critique_result")
-    if hasattr(critique, 'approved'):
-        status = "APPROVED" if critique.approved else "REVISION NEEDED"
+    if hasattr(critique, 'is_approved'):
+        status = "APPROVED" if critique.is_approved else "REVISION NEEDED"
         logger.info(f"Critic decision: {status}")
     
     logger.info("Critic completed, returning to supervisor")
@@ -236,7 +236,7 @@ def should_revise_analysis(state: GraphState) -> Literal["revise", "proceed", "f
         return "proceed"
     
     # Check if approved
-    if hasattr(critique, 'approved') and critique.approved:
+    if hasattr(critique, 'is_approved') and critique.is_approved:
         logger.info("Analysis approved by critic")
         return "proceed"
     
