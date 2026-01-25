@@ -26,14 +26,6 @@ This project demonstrates advanced multi-agent orchestration where a **Superviso
 └────────┘  └─────────┘  └──────┘  └────────┘
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Python 3.13+
-- Groq API key ([Get it here](https://console.groq.com/keys))
-- Tavily API key ([Get it here](https://app.tavily.com/))
-
 ## 📁 Project Structure
 
 ```
@@ -73,27 +65,6 @@ Multi Agent Researcher/
 # CLI usage
 python src/main.py --topic "Tesla stock analysis"
 
-# Streamlit UI
-streamlit run src/app.py
-```
-
-## 🧪 Testing
-
-```bash
-pytest tests/
-```
-
-## 🚧 Development Status
-
-- [x] Phase 1.1: Environment Setup
-- [x] Phase 1.2: Configuration Module
-- [ ] Phase 1.3: Schemas Definition
-- [ ] Phase 1.4: State Definition
-- [ ] Phase 2: Tools Implementation
-- [ ] Phase 3: Agent Implementation
-- [ ] Phase 4: Graph Construction
-- [ ] Phase 5: Testing & Integration
-- [ ] Phase 6: UI & Documentation
 
 ## 📄 License
 
