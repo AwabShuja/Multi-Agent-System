@@ -321,7 +321,7 @@ def critic_node(state: GraphState) -> GraphState:
         # Log critique result
         if updated_state.get("critique_result"):
             critique = updated_state["critique_result"]
-            status = "APPROVED" if critique.approved else "REVISION REQUESTED"
+            status = "APPROVED" if critique.is_approved else "REVISION REQUESTED"
             score = critique.quality_score if hasattr(critique, 'quality_score') else 0
             logger.info(f"Critique completed: {status} (score: {score:.2f})")
         

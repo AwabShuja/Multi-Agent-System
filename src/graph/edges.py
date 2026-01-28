@@ -54,14 +54,15 @@ def route_from_supervisor(state: GraphState) -> RouteDestination:
     # Get supervisor's routing decision
     next_agent = state.get("next_agent")
     
-    if next_agent is None:
-        logger.error("Supervisor did not set next_agent")
-        return "error"
-    
-    # Handle END routing
-    if next_agent == "END" or next_agent == "end":
-        logger.info("Routing to END node")
-        return "end"
+    # Handle END routing - can be explicit "END"/"end" or None when workflow is complete
+    if next_agent is None or next_agent == "END" or next_agent == "end":
+        # Check if we have a final report to determine if workflow should end
+        if state.get("final_report"):
+            logger.info("Routing to END node - workflow complete")
+            return "end"
+        else:
+            logger.error("Supervisor did not set next_agent and no final report available")
+            return "error"
     
     # Validate and route to worker agent
     valid_agents = {"researcher", "analyst", "critic", "writer"}
